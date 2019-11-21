@@ -1,8 +1,10 @@
-<table>
-  <th>Shelter</th>
+<table class="table">
+  <th>Shelter:</th>
   <% @shelters.each do |shelter| %>
     <tr>
       <td><%= shelter.name %></td>
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'New Shelter', '/shelters/new' %>

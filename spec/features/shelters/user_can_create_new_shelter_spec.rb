@@ -16,7 +16,6 @@ RSpec.describe 'New shelter' do
       fill_in 'Zip', with: '80201'
 
       click_on 'Add Shelter'
-require "pry"; binding.pry
       expect(current_path).to eq('/shelters')
       expect(page).to have_content('Denver')
     end

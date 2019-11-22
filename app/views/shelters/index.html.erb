@@ -1,8 +1,11 @@
 <table class="table">
   <th>Shelter:</th>
+  <th>Update?</th>
+  <th>Delete?</th>
   <% @shelters.each do |shelter| %>
     <tr>
-      <td><%= shelter.name %></td>
+      <td><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></td>
+      <td><%= link_to "Edit", "shelters/#{shelter.id}/edit" %></td>
     </tr>
   <% end %>
 </table>

@@ -6,6 +6,7 @@
     <tr>
       <td><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></td>
       <td><%= link_to "Edit", "shelters/#{shelter.id}/edit" %></td>
+      <td><%= link_to "Delete", "shelters/#{shelter.id}", method: :delete %></td>
     </tr>
   <% end %>
 </table>

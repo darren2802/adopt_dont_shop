@@ -1,0 +1,16 @@
+<table class="table">
+  <th>Name</th>
+  <th>Age (approx)</th>
+  <th>Sex</th>
+  <th>Shelter</th>
+  <th>Image</th>
+  <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.name %></td>
+      <td><%= pet.age_approx %></td>
+      <td><%= pet.sex %></td>
+      <td><%= pet.shelter.name %></td>
+      <td><img src="<%= pet.image %>"></td>
+    </tr>
+  <% end %>
+</table>

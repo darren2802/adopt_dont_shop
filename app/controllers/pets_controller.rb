@@ -14,4 +14,21 @@ class PetsController < ApplicationController
     @adopt_status
   end
 
+  def new
+    @shelter_id = params[:id]
+  end
+
+  def create
+    modified_params = pet_params
+    modified_params[:adoptable] = true
+    shelter = Shelter.find(modified_params[:shelter_id])
+    pet = shelter.pets.create(modified_params)
+    redirect_to "/shelters/#{shelter.id}/pets"
+  end
+
+  private
+    def pet_params
+      params.permit(:name, :image, :description, :age_approx, :sex, :breed, :shelter_id)
+    end
+
 end

@@ -31,6 +31,7 @@ class SheltersController < ApplicationController
   def showpets
     @shelter_pets = Pet.where("shelter_id = ?", params[:id])
     @shelter_name = Shelter.find(params[:id]).name
+    @shelter_id = params[:id]
   end
 
   private

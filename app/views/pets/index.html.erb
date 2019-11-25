@@ -1,16 +1,12 @@
-<table class="table">
-  <th>Name</th>
-  <th>Age (approx)</th>
-  <th>Sex</th>
-  <th>Shelter</th>
-  <th>Image</th>
+<div class="grid">
   <% @pets.each do |pet| %>
-    <tr>
-      <td><%= pet.name %></td>
-      <td><%= pet.age_approx %></td>
-      <td><%= pet.sex %></td>
-      <td><%= pet.shelter.name %></td>
-      <td><img src="<%= pet.image %>"></td>
-    </tr>
+    <div class="grid_item">
+      <h4><%= pet.name %></h4>
+      <img src="<%= pet.image %>" class="grid_img"><br>
+      <%= pet.breed %><br>
+      <%= pet.sex %><br>
+      <%= pet.age_approx %> years of age<br>
+      <%= pet.shelter.name %>
+    </div>
   <% end %>
-</table>
+</div>

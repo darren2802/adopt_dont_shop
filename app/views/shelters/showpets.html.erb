@@ -1,0 +1,15 @@
+<%= link_to 'Add Adoptable Pet', "/shelters/#{@shelter_id}/pets/new" %><br><br>
+
+<h2><%= @shelter_name %></h2>
+
+<div class="grid">
+  <% @shelter_pets.each do |pet| %>
+    <div class="grid_item">
+      <h4><%= pet.name %></h4>
+      <img src="<%= pet.image %>" class="grid_img"><br>
+      <%= pet.breed %><br>
+      <%= pet.sex %><br>
+      Approximate age: <%= pet.age_approx %><br>
+    </div>
+  <% end %>
+</div>

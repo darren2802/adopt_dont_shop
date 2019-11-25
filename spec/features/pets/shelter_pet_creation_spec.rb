@@ -7,15 +7,6 @@ RSpec.describe 'Shelter Pet Creation', type: :feature do
                                 city: 'Denver',
                                 state: 'Colorado',
                                 zip: 80202)
-
-    # @pet_1 = Pet.create( name: 'Elvis',
-    #                     breed: 'German Shepherd',
-    #                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    #                     image: 'https://adopt-dont-shop.s3-us-west-1.amazonaws.com/images/border_collie_92.jpg',
-    #                     age_approx: 7,
-    #                     sex: 'male',
-    #                     adoptable: true,
-    #                     shelter_id: @shelter_1.id)
   end
   it 'can add a new adoptable pet when clicking a link on an index page for a shelter' do
     visit "/shelters/#{@shelter_1.id}/pets/new"

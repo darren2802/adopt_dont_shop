@@ -26,12 +26,13 @@ class SheltersController < ApplicationController
   def destroy
     shelter = Shelter.find(params[:id])
     shelter.destroy
-    
+
     redirect_to '/shelters'
   end
 
   def showpets
     @shelter_pets = Pet.where("shelter_id = ?", params[:id])
+    @pet_count = @shelter_pets.count
     @shelter_name = Shelter.find(params[:id]).name
     @shelter_id = params[:id]
   end

@@ -10,8 +10,10 @@
     <%= @pet.age_approx %><br>
     <%= @pet.sex %><br>
     <%= @adopt_status %><br>
+    <%= link_to "#{@adopt_link}", "#{@adopt_route}", method: :patch %><br>
     <%= link_to "#{@pet.shelter.name}", "/shelters/#{@pet.shelter_id}" %>
-    <br><br>
+    <br>
+    <hr>
     <%= link_to 'Update', "/pets/#{@pet.id}/edit", :class => 'tab-space' %>
     <%= link_to 'Delete', "/pets/#{@pet.id}/", method: :delete, :class => 'tab-space' %>
   </div>

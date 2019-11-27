@@ -1,15 +1,21 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
+    @pets = Pet.all.order(adoptable: :desc, breed: :asc, name: :asc)
   end
 
   def show
     @pet = Pet.find(params[:id])
     @adopt_status = ''
+    @adopt_link = ''
+    @adopt_route = ''
     if @pet.adoptable == true
       @adopt_status = 'Adoptable'
+      @adopt_link = 'Change to Adoption Pending'
+      @adopt_route = "/pets/#{@pet.id}/pending"
     else
       @adopt_status = 'Pending adoption'
+      @adopt_link = 'Change to Adoptable'
+      @adopt_route = "/pets/#{@pet.id}/adoptable"
     end
     @adopt_status
   end
@@ -40,6 +46,22 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     pet.destroy
+
+    redirect_to '/pets'
+  end
+
+  def topending
+    pet = Pet.find(params[:id])
+    pet.adoptable = false
+    pet.save
+
+    redirect_to '/pets'
+  end
+
+  def toadoptable
+    pet = Pet.find(params[:id])
+    pet.adoptable = true
+    pet.save
 
     redirect_to '/pets'
   end

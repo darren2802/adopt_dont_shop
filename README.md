@@ -453,7 +453,7 @@ And I see only the pets that are adoptable/pending adoption (respectively).
 
 
 ```
-[ ] done
+[/] done
 
 User Story 26, Change Pet's Adoptable/Pending Adoption Status
 
